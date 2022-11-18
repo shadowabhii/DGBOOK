@@ -25,6 +25,8 @@ import { ShowbooksComponent } from './Components/showbooks/showbooks.component';
 import { RevenueComponent } from './Components/revenue/revenue.component';
 import { ReaderSignInComponent } from './Components/reader-sign-in/reader-sign-in.component';
 import { ReaderAccountComponent } from './Components/reader-account/reader-account.component';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
+
 
 
 
@@ -40,7 +42,7 @@ import { ReaderAccountComponent } from './Components/reader-account/reader-accou
     NavBarComponent, AuthorAccountComponent, HomepageComponent, 
     DashboardComponent, SigninComponent, SearchbookComponent, UpdatebookComponent, 
     ReaderComponent, ReaderdashboardComponent, BuybookComponent, CartComponent, 
-    ReaderHistoryComponent, CheckoutComponent, ShowbooksComponent, RevenueComponent, ReaderSignInComponent, ReaderAccountComponent,
+    ReaderHistoryComponent, CheckoutComponent, ShowbooksComponent, RevenueComponent, ReaderSignInComponent, ReaderAccountComponent, OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,

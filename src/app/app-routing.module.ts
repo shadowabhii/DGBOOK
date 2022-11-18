@@ -17,7 +17,7 @@ import { ShowbooksComponent } from './Components/showbooks/showbooks.component';
 import { RevenueComponent } from './Components/revenue/revenue.component';
 import { ReaderAccountComponent } from './Components/reader-account/reader-account.component';
 import { ReaderSignInComponent } from './Components/reader-sign-in/reader-sign-in.component';
-
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 const routes: Routes = [
 
   { path: 'book', component: BooksComponent },
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path :'revenue' , component: RevenueComponent},
   { path: 'readerAccount', component: ReaderAccountComponent},
   {path :'readerSignIn' , component: ReaderSignInComponent},
+  {path :'order' , component: OrderHistoryComponent},
 
 ];
 

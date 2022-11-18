@@ -1,0 +1,135 @@
+
+
+  <section class="vh-100 " style="background-color: #d4aaaa;">
+    <div class="container h-100  ">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+<!-- To add book -->
+<h3  style="text-align: center;">Enter Book Data</h3>
+
+<div class="container">
+  
+  <br>
+
+ 
+
+  <input class="form-control" [(ngModel)]="book.logo" name="logo" id="logo"  type="file" (change)="onImageUpload($event)">
+
+
+  <br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="title" [(ngModel)]=book.title aria-label="title">
+  </div>
+
+
+  <br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="category" [(ngModel)]=book.category aria-label="category">
+  </div>
+
+
+
+  <br>
+
+  <div class="col">
+    <input type="number" class="form-control" placeholder="price" [(ngModel)]=book.price aria-label="price">
+  </div>
+
+
+  <br>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="author" [(ngModel)]=book.author aria-label="author">
+  </div>
+
+
+
+  <br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="publisher" [(ngModel)]=book.publisher aria-label="publisher">
+  </div>
+
+
+  <br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="publishedDate" [(ngModel)]=book.publishedDate
+      aria-label="publishedDate">
+  </div>
+
+
+
+
+  <br>
+
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="chapterOrContent" [(ngModel)]=book.chapterOrContent
+      aria-label="chapterOrContent">
+  </div>
+
+
+
+  <br>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" 
+     [(ngModel)]=book.active name ="active">
+    <label class="form-check-label" for="flexCheckDefault">
+      Active
+    </label>
+   
+  </div>
+
+
+
+  <br>
+
+
+
+
+<!-- To show Book -->
+
+  <button type="submit" class="btn btn-success" (click)="save()">Save Book</button>
+  <br>
+  <br>
+
+  
+  <button type="submit" class="btn btn-success" routerLink="/dashboard" >Go Book To Author DashBoard</button>
+  <br>
+  <br>
+
+  
+
+</div>
+
+
+</div>
+<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1">
+
+  <img src="https://media.istockphoto.com/photos/elearning-online-education-or-internet-encyclopedia-concept-open-and-picture-id1263424631?b=1&k=20&m=1263424631&s=170667a&w=0&h=1Iu9DYwkR77QTLbKp1fC1M9gbJMCyaHoP7u3q1GqiiA="
+    class="img-fluid" alt="Sample image">
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<br>
+<br>
+
+
+
+</div>
+</div>
+</div>
+</section>

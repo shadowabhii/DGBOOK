@@ -1,0 +1,41 @@
+<!-- To Search Book by id -->
+<div style="background-color: rgb(209, 175, 175);" >
+
+  <button (click)=" showBook()">Show Book</button>
+
+<div class="container py-5" >
+    <h3 class="text-center text-uppercase"  >List of Books</h3>
+    <table class="table table-bordered table-striped"  style="background-color: rgb(236, 192, 207);">
+      <thead>
+        <tr class="text-center text-uppercase">
+          <th>Logo ID</th>
+          <th>Title</th>
+          <th>Category Name</th>
+          <th>Price</th>
+          <th>Author</th>
+          <th>Publisher</th>
+          <th>Published Date</th>
+          <th>chapterOrContent</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of books;">
+          <td><img src="http://localhost:8084/download/?image={{b.logo}}" alt="Girl in a jacket" width="100" height="100">
+          </td>
+          <td>{{b.title}}</td>
+          <td>{{b.category}}</td>
+          <td>{{b.price  | currency:'INR'}}</td>
+          <td>{{b.author}}</td>
+          <td>{{b.publisher}}</td>
+          <td>{{b.publishedDate}}</td>
+          <td>{{b.chapterOrContent}}</td>
+          <td>{{b.active}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  <button type="submit" class="btn btn-success" routerLink="/dashboard" >Go Book To Author DashBoard</button>
+    <br>
+    <br></div>

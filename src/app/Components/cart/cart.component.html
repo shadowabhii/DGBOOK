@@ -1,0 +1,96 @@
+
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+<span *ngIf="books.length === 0">
+  <span><img src="https://media.tenor.com/images/2322364e6a7be9406868eeefaaa8ddc0/tenor.gif" id="emptyCartImage">
+      <div class="alert" class="alert alert-primary">
+          &nbsp;&nbsp; Your Cart Is Empty!!
+      </div>
+  </span>
+</span>
+<div class="container py-5">
+ 
+ 
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="text-center text-uppercase">
+        <th>Logo ID</th>
+        <th>Book Id</th>
+        <th>Title</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of books;">
+        <td><img src="http://localhost:8084/download/?image={{b.logo}}" alt="Girl in a jacket" width="100" height="100">
+        </td>
+        <td>{{b.bId}}</td>
+        <td>{{b.title}}</td>
+        <td>{{b.price | currency:'INR'}}</td>
+        
+        <td></td>
+      </tr>
+
+     
+    </tbody>
+   
+  </table>
+</div>
+
+
+    <a type="submit" class="btn btn-success" routerLink="/readerdashboard">Reader DashBoard</a>
+  
+
+  <a type="submit" class="btn btn-info"  ></a>
+
+   <a type="submit" class="btn btn-success" (click)="getTotalCartValue()" >Total Cart Value</a>
+
+
+<br>
+<br>
+
+Total Cart Value {{totalCartPrice | currency:'INR'}}
+
+
+
+
+
+<div class="mt-2">
+
+  <input type="text" id="form3Example1c" class="form-control "
+          placeholder="readerName" [(ngModel)]=buyBook.readerName  name="readerName" />
+          <label class="form-label"></label>
+        </div>
+        
+        <div >
+          <input type="text" id="form3Example1c" class="form-control"
+          placeholder="readerEmailId" [(ngModel)]=buyBook.readerEmailId  name="readerEmailId" />
+          <label class="form-label"></label>
+        </div>
+       
+
+ <a type="submit" class="btn btn-primary placeOrder" routerLink="/readerdashboard" (click)=" saveReaderDetails(buyBook)
+  ">Order</a>
+
+
+
+
+</div>
+<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1">
+
+  <img src="https://media.istockphoto.com/photos/elearning-online-education-or-internet-encyclopedia-concept-open-and-picture-id1263424631?b=1&k=20&m=1263424631&s=170667a&w=0&h=1Iu9DYwkR77QTLbKp1fC1M9gbJMCyaHoP7u3q1GqiiA="
+    class="img-fluid" alt="Sample image">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

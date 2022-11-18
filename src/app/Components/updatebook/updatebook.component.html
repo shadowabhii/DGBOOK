@@ -1,0 +1,202 @@
+<!-- To add book -->
+
+<div style="background-color: rgb(221, 152, 152);">
+<section class="vh-100" >
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                 
+
+  <h3 class ="main container">Update Book</h3>
+ 
+  <br>
+
+<div class="container">
+    <!-- <div class="col">
+        <input type="text" class="form-control" placeholder="logo" [(ngModel)]=book.logo aria-label="logo">
+    </div> -->
+
+
+   
+
+
+    <br>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="title" [(ngModel)]=book.title aria-label="title">
+    </div>
+
+
+    <br>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="category" [(ngModel)]=book.category aria-label="category">
+    </div>
+
+
+
+    <br>
+
+    <div class="col">
+        <input type="number" class="form-control" placeholder="price" [(ngModel)]=book.price aria-label="price">
+    </div>
+
+
+    <br>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="author" [(ngModel)]=book.author aria-label="author">
+    </div>
+
+
+
+    <br>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="publisher" [(ngModel)]=book.publisher
+            aria-label="publisher">
+    </div>
+
+
+    <br>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="publishedDate" [(ngModel)]=book.publishedDate
+            aria-label="publishedDate">
+    </div>
+
+
+
+
+    <br>
+
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="chapterOrContent" [(ngModel)]=book.chapterOrContent
+            aria-label="chapterOrContent">
+    </div>
+
+
+
+    <br>
+<!-- 
+    <div class="col">
+        <input type="boolean" class="form-control" placeholder="isActive" [(ngModel)]=book.isActive
+            aria-label="isActive">
+    </div> -->
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" 
+       [(ngModel)]=book.active name ="active">
+      <label class="form-check-label" for="flexCheckDefault">
+        Active
+      </label>
+     
+    </div>
+
+    <br>
+
+
+
+
+    <!-- To show Book -->
+
+    <a type="submit" class="btn btn-success" (click)="update(book)">Update Book</a>
+    <br>
+    <br>
+
+    <a type="submit" class="btn btn-success" (click)="showBook()">Show Author Book</a>
+    <br>
+    <br>
+
+    
+
+    <button type="submit" class="btn btn-success" routerLink="/dashboard" >Author DashBoard</button>
+    <br>
+    <br>
+    
+    
+
+    </div>
+
+</div>
+<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1">
+
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+    class="img-fluid" alt="Sample image">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container py-5 text-center tableclr"  style="background-color: rgb(245, 209, 209);">
+    <h3 class="text-center text-uppercase">List of Book</h3>
+    <table class="table table-bordered table-striped {
+      background-color: burlywood;
+      
+  }"  >
+      <thead>
+        <tr class="text-center text-uppercase">
+            <th>Update</th>
+            <th>Logo</th>
+            <th>Title</th>
+            <th>Category Name</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+            <th>chapterOrContent</th>
+            <th>Active</th>
+               
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of books; let j=index">
+            <td> <a type="submit" class="btn btn-success" (click)="updateBook(b,b.bId)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg></a></td>
+            <td><img src="http://localhost:8084/download/?image={{b.logo}}" alt="Girl in a jacket" width="100" height="100">
+            </td>
+            <td>{{b.title}}</td>
+            <td>{{b.category}}</td>
+            <td>{{b.price  | currency:'INR'}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.publisher}}</td>
+            <td>{{b.publishedDate}}</td>
+            <td>{{b.chapterOrContent}}</td>
+            <td>{{b.active}}</td>
+         
+        
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</div>

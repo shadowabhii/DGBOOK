@@ -1,0 +1,11 @@
+.example-spacer{
+    flex: 1 1 auto;
+
+}
+
+.main{
+    color: rgb(105, 28, 79);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(124, 190, 190);
+    text-align: center;
+}

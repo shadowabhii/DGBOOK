@@ -1,0 +1,70 @@
+
+<section class="vh-100" style="background-color: rgb(209, 175, 175);">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Author revenue</p>
+
+                    
+    
+
+
+  <div class="form-outline flex-fill mb-0">
+    <input type="date" id="form3Example1c" class="form-control"
+    placeholder="startDate" [(ngModel)]=startDate  name="startDate" />
+    <label class="form-label"
+   
+    for="form3Example1c">From Date</label>
+  </div>
+
+  <br>
+  <br>
+  
+
+  <div class="form-outline flex-fill mb-0">
+    <input type="date" id="form3Example1c" class="form-control"
+    placeholder="endDate" [(ngModel)]=endDate  name="endDate" />
+    <label class="form-label"
+   
+    for="form3Example1c">To Date</label>
+  </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="button" class="btn btn-success"
+                        (click)="checkRevenue(startDate,endDate)"   
+                        >Check Revenue</button>
+                      </div> 
+
+
+                      <br>
+                      <br>
+                      <br>
+
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="button" class="btn btn-success"
+                          
+                        >Total Revenue is {{totalRevenue | currency:'INR'}}</button>
+                      </div> 
+
+                      
+    
+                  
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1">
+    
+                    <img src="https://media.istockphoto.com/photos/elearning-online-education-or-internet-encyclopedia-concept-open-and-picture-id1263424631?b=1&k=20&m=1263424631&s=170667a&w=0&h=1Iu9DYwkR77QTLbKp1fC1M9gbJMCyaHoP7u3q1GqiiA="
+                      class="img-fluid" alt="Sample image">
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -9,7 +9,29 @@
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
     
      
-                        <button (click)="history()">Check History</button>
+
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="date" id="form3Example1c" class="form-control"
+                        placeholder="startDate" [(ngModel)]=startDate  name="startDate" />
+                        <label class="form-label"
+                       
+                        for="form3Example1c">From Date</label>
+                      </div>
+                    
+                      <br>
+                      <br>
+                      
+                    
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="date" id="form3Example1c" class="form-control"
+                        placeholder="endDate" [(ngModel)]=endDate  name="endDate" />
+                        <label class="form-label"
+                       
+                        for="form3Example1c">To Date</label>
+                      </div>
+
+
+                        <button (click)="history(startDate,endDate)">Check History</button>
       
     
     

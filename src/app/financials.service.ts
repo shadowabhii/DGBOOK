@@ -24,11 +24,11 @@ export class FinancialsService {
       return this.http.get(BASE_URL_TO_AUTHOR_REVENUE+startDate+"/"+endDate+"/"+bookId);
   }
 
-  getTransaction(id)
+  getTransaction(startDate,endDate,id)
   {
     console.log(id);
     
-        return this.http.get(BASE_URL_TO_AUTHOR_ORDER_HISTORY+id);
+        return this.http.get(BASE_URL_TO_AUTHOR_ORDER_HISTORY+startDate+"/"+endDate+"/"+id);
   }
 
   constructor(private http:HttpClient) { }

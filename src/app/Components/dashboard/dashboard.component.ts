@@ -25,7 +25,7 @@ logOut()
   if((sessionStorage.getItem('AuthorId'))!=null)
   {
     sessionStorage.removeItem('AuthorId');
-    window.location.href = "/sigin";
+    window.location.href = "/home";
 
   }
 }

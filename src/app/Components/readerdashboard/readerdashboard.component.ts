@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReaderdashboardComponent implements OnInit {
 
+  logOut()
+{
+  if((sessionStorage.getItem('ReaderId'))!=null)
+  {
+    sessionStorage.removeItem('ReaderId');
+    window.location.href = "/home";
+
+  }
+}
+
   constructor() { }
 
   ngOnInit(): void {

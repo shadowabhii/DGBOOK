@@ -38,7 +38,7 @@ export class OrderHistoryComponent implements OnInit {
 
   
 
-    if(this.endDate==null && this.startDate==null)
+    if((this.endDate==null && this.startDate==null) || this.startDate<this.endDate)
     {
       alert ("Enter Date")
     }
@@ -49,6 +49,10 @@ export class OrderHistoryComponent implements OnInit {
     const observable=this.financialsService.getTransaction(this.startDate,this.endDate,this.authorId);
     observable.subscribe((response) => {
       console.log(response);
+      if(response[0]==null)
+      {
+        alert("Still Waiting for the very 1st Order")
+      }
       this.transact = response as Transaction[];
     });
   

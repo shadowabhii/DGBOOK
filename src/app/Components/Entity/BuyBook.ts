@@ -7,6 +7,7 @@ export default class BuyBook{
 	bId:number;
 	price:number;
 	pdf:any;
+	rId:number
 
     
 

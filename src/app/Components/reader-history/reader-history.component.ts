@@ -18,6 +18,7 @@ export class ReaderHistoryComponent implements OnInit {
   buyBook:BuyBook=new BuyBook();
   buyBooks:BuyBook[]=[];
   invoice:BuyBook[]=[];
+  rId:number=parseInt(sessionStorage.getItem('ReaderId'));
   
   
   downloadInvoice(paymentid)
@@ -31,9 +32,9 @@ export class ReaderHistoryComponent implements OnInit {
   
   }
 
-  getHistory(readerEmailId)
+  getHistory()
   {
-    const observable =this.readerhistoryService.getReaderHistory(readerEmailId);
+    const observable =this.readerhistoryService.getReaderHistory(this.rId);
     observable.subscribe((response) => {
       console.log(response);
       this.buyBooks = response as BuyBook[];

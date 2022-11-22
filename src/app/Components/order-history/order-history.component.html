@@ -40,11 +40,11 @@
                       <thead>
                         <tr class="text-center text-uppercase">
                            
-                          <th>Book Id</th>           
+                          <th>Book Name</th>           
                           <th>Reader Name</th>
                           <th>Date</th>
                           <th>Price</th>
-                          <th>Notified</th>          
+                                  
                          
                          
                           
@@ -53,12 +53,12 @@
                       <tbody>
                         <tr *ngFor="let t of transact;">
                           
-                          <td>{{t.bookId}}</td>
+                          <td>{{t.bookTitle}}</td>
                           <td>{{t.readerName}}</td>
                           <td>{{t.date}}</td>          
                          
                           <td>{{t.price | currency:'INR'}}</td>
-                          <td>{{t.authorNotified}}</td>
+                         
                           
                          
                          

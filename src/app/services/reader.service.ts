@@ -22,7 +22,7 @@ export class ReaderService {
     return this.http.get(BASE_URL_TO_SEARCH_BOOK_BY_ID+bId);
   }
 
-  orderBook(buyBook:{paymentid:string;readerName:string;readerEmailId:string;bId:number;})
+  orderBook(buyBook:{paymentid:string;readerName:string;readerEmailId:string;bId:number;rId:number})
   {     
 return this.http.post(BASE_URL_TO_BUY_BOOK,buyBook);
   }
@@ -47,9 +47,9 @@ return this.http.post(BASE_URL_TO_BUY_BOOK,buyBook);
     return this.http.get(BASE_URL_TO_SEARCH_BOOK_PRICE_CATEGORY+price+"/"+category);
   }
 
- getReaderPurchasedBook(readerName,readerEmailId)
+ getReaderPurchasedBook(rId)
  {
-  return this.http.get(BASE_URL_FOR_READER_TO_READ_PURCHASED_BOOK+readerName+"/"+readerEmailId);
+  return this.http.get(BASE_URL_FOR_READER_TO_READ_PURCHASED_BOOK+rId);
  }
   constructor(private http:HttpClient) { }
 }

@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
   public gst = 0;
   price:number;
   authorId:number;
+  bookTitle:string;
 
 
   getBookIdAndPrice()
@@ -33,6 +34,9 @@ export class CartComponent implements OnInit {
       this.bid = this.books[i].bId;
       this.price = this.books[i].price;
       this.authorId=this.books[i].aId;
+      this.bookTitle=this.books[i].title;
+      console.log(this.bookTitle);
+      
       
     }
   }
@@ -56,33 +60,27 @@ export class CartComponent implements OnInit {
   }
 
 
-  subtractCount(id: number) {
-    this.count = this.count - 1;
-    this.books.forEach(item => {
-      this.cartTotal -= (item.price)
-      this.gst = this.cartTotal + this.cartTotal * (8 / 100);
-    })
-    if (this.count == 0) {
-      this.cartService.clearCart()
-    }
-  }
+ 
 
 
 
   orderBook(buyBook) {
     console.log(buyBook);
+    this.buyBook.rId=parseInt(sessionStorage.getItem('ReaderId'));
     const observable = this.readerService.orderBook(buyBook);
 
 
     observable.subscribe((response) => {
       console.log(response);
-     // window.location.href = "/read"
+      
     },
       function (error) {
         console.log(error);
         alert("Something went wrong");
       }
     );
+    this.clearCartItem();
+    window.location.href = "/readerdashboard"
 
 
   }
@@ -97,7 +95,7 @@ getTotalCartValue(){
         }
     }
     console.log(total);
-    
+    this.getBookIdAndPrice();
     return total;
 }
 
@@ -112,8 +110,11 @@ readerTransaction()
   this.transaction.readerId=parseInt(sessionStorage.getItem('ReaderId'));
   this.transaction.readerName=this.buyBook.readerName;
   this.transaction.aId=this.authorId;
+  this.transaction.bookTitle=this.bookTitle;
+  //console.log(this.transaction.bookTitile);
+  
+  //console.log(this.transaction);
 
-  console.log(this.transaction);
   
   const observable = this.financialServices.recordTransaction(this.transaction);
 
@@ -137,6 +138,11 @@ readerTransaction()
 
 
   books = this.cartService.getItems();
+
+  clearCartItem() 
+  { this.cartService.clearCart();
+    window.location.reload();
+  }
 
   constructor(private cartService: CartService, private readerService: ReaderService,
               private financialServices:FinancialsService) { }

@@ -17,10 +17,11 @@ export class ReaderComponent implements OnInit {
   readerName;
   readerEmailId;
   author;
+  rId:number=parseInt(sessionStorage.getItem('ReaderId'));
 
-  readBook(readerName,readerEmailId)
+  readBook()
   {
-    const observable =this.readerService.getReaderPurchasedBook(readerName,readerEmailId)
+    const observable =this.readerService.getReaderPurchasedBook(this.rId)
     .subscribe((response) => {
       //console.log(response);
       this.books = response as Books[];

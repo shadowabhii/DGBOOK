@@ -11,9 +11,9 @@ const BASE_URL_OF_READER_INVOICE="http://localhost:8085/reader/invoice/";
 
 export class ReaderhistoryService {
 
-  getReaderHistory(readerEmailId)
+  getReaderHistory(rId)
   {
-      return this.http.get(BASE_URL_OF_READER_HISTORY+readerEmailId);
+      return this.http.get(BASE_URL_OF_READER_HISTORY+rId);
   }
 
   getReaderInvoice(paymentid)

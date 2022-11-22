@@ -9,6 +9,7 @@ export default class Transaction
      readerId:number;
 	 bookId:number;
 	 aId:number;
+	 bookTitle:string;
 
 
 }
